@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+	<script src="index.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap">
+    <title>Apple Store</title>
+</head>
+
+<body>
+    <header>
+        <nav id="nav">
+            <img src="Vector.svg" alt="Logo" class="vector-icon">
+            <div class="menu">
+                <a href="#">Store</a>
+                <a href="#">Watch</a>
+                <a href="#">AirPods</a>
+                <a href="#">TV & Home</a>
+                <a href="#">Entertainment</a>
+                <a href="#">Support</a>
+                <a href="#">iPhone</a>
+                <a href="#">Accessories</a>
+            </div>
+            <img src="Vector1.svg" alt="Search" class="vector-icon1">
+            <img src="Vector2.svg" alt="Cart" class="vector-icon2">
+        </nav>
+    </header>
+
+    <main>
+        <section id="promo">
+            <div class="promo-text">
+                <p>Get iPhone 15 Pro from ₹5408.00/mo. <a href="#">‡</a> for 24 mo. with No Cost EMI from most leading banks.</p>
+                <a href="https://www.apple.com/in/shop/buy-iphone/iphone-15-pro" class="buy-now" target="_blank">Buy now</a>
+            </div>
+        </section>
+
+        <section id="products">
+            <img src="ipad.png" alt="iPad Pro" class="product-img">
+            <img src="macbook air buy now.png" alt="MacBook Air" class="product-img">
+            <img src="iphone 15 pro.png" alt="iPhone 15 Pro" class="product-img">
+            <img src="apple watch.png" alt="Apple Watch" class="product-img1">
+            <img src="macbook air buy now.png" alt="MacBook Air" class="product-img1">
+        </section>
+
+        <section id="gallery" class="gallery-container" data-animate-on-scroll>
+			<div class="gallery-wrapper">
+				<img src="card1.png" alt="Product Image" class="gallery-img">
+				<img src="card2.png" alt="Product Image" class="gallery-img">
+				<img src="card3.png" alt="Product Image" class="gallery-img">
+				<img src="card4.png" alt="Product Image" class="gallery-img">
+				<img src="card5.png" alt="Product Image" class="gallery-img">
+			</div>
+			<button class="gallery-nav prev" onclick="slide(-1)">&#10094;</button>
+			<button class="gallery-nav next" onclick="slide(1)">&#10095;</button>
+		</section>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-links">
+            <a href="#">System Status</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Apple Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        var scrollAnimElements = document.querySelectorAll('[data-animate-on-scroll]');
+        var observer = new IntersectionObserver((entries) => {
+            for (const entry of entries) {
+                if (entry.isIntersecting || entry.intersectionRatio > 0) {
+                    const targetElement = entry.target;
+                    targetElement.classList.add("animate");
+                    observer.unobserve(targetElement);
+                }
+            }
+        }, {
+            threshold: 0.15,
+        });
+
+        scrollAnimElements.forEach(element => observer.observe(element));
+    </script>
+</body>
+
+</html>

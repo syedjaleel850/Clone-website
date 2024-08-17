@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #000;
+    background-color: #fff;
+    
+}
+
+/* Header Styling */
+header nav {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    overflow-x: hidden;
+}
+
+header nav .menu {
+    display: flex;
+    gap: 15px;
+    margin-left:170px;
+}
+
+header nav .menu a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header nav img {
+    height: 24px;
+    cursor: pointer;
+}
+
+/* Promo Section */
+#promo {
+    background-color: #1d1d1f;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#promo .buy-now {
+    text-decoration: underline;
+    color: #0076b8;
+}
+
+/* Products Section */
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+#products .product-img {
+    width: 100%;
+    object-fit: cover;
+}
+.product-img1 {
+    width: 50%;
+   max-width: 620px;
+    object-fit: cover;
+}
+
+/* Gallery Section */
+.gallery-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    width: 639px;
+    height:851px;
+    margin-left:25%;
+}
+
+.gallery-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    flex-wrap: nowrap; /* Prevents wrapping which could cause horizontal scroll */
+
+}
+
+.gallery-img {
+    min-width: 100%;
+    object-fit: cover;
+}
+
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.gallery-nav.prev {
+    left: 0;
+}
+
+.gallery-nav.next {
+    right: 0;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #e2e2e2;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .footer-links a {
+    text-decoration: underline;
+    color: inherit;
+    margin-right: 15px;
+}
+
+footer .copyright {
+    text-align: center;
+    width: 100%;
+    padding-top: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #promo, footer {
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .gallery-img {
+        height: auto;
+    }
+
+    .gallery-nav {
+        padding: 5px;
+    }
+}
